@@ -1,53 +1,32 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-
-    <div class="count">
-        total items is {{ pagination.getTotalItemCount }}
-    </div>
-    <table>
-        {% for article in pagination %}
-            <tr {% if loop.index is odd %}class="color"{% endif %}>
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="/uploads/media/default/0001/01/thumb_{{ article.id }}_admin.jpeg" alt="Symfony!" />
-                </a>
-                {{ article.description }}
-            </tr>
-        {% endfor %}
-    </table>
-    <div class="navigation">
-        {{ knp_pagination_render(pagination) }}
-    </div>
-
-{% endblock %}
+{#{% extends 'base.html.twig' %}#}
 
 {% block stylesheets %}
-    <style>
-        body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-        h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-        h1 { font-size: 36px; }
-        h2 { font-size: 21px; margin-bottom: 1em; }
-        p { margin: 0 0 1em 0; }
-        a { color: #0000F0; }
-        a:hover { text-decoration: none; }
-        code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-        #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-        #container { padding: 2em; }
-        #welcome, #status { margin-bottom: 2em; }
-        #welcome h1 span { display: block; font-size: 75%; }
-        #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-        #icon-book { display: none; }
+    {#<style>#}
+        {#body { background: #F5F5F5; font: 18px/1.5 sans-serif; }#}
+        {#h1, h2 { line-height: 1.2; margin: 0 0 .5em; }#}
+        {#h1 { font-size: 36px; }#}
+        {#h2 { font-size: 21px; margin-bottom: 1em; }#}
+        {#p { margin: 0 0 1em 0; }#}
+        {#a { color: #0000F0; }#}
+        {#a:hover { text-decoration: none; }#}
+        {#code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }#}
+        {##wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }#}
+        {##container { padding: 2em; }#}
+        {##welcome, #status { margin-bottom: 2em; }#}
+        {##welcome h1 span { display: block; font-size: 75%; }#}
+        {##icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }#}
+        {##icon-book { display: none; }#}
 
-        @media (min-width: 768px) {
-            #wrapper { width: 80%; margin: 2em auto; }
-            #icon-book { display: inline-block; }
-            #status a, #next a { display: block; }
+        {#@media (min-width: 768px) {#}
+            {##wrapper { width: 80%; margin: 2em auto; }#}
+            {##icon-book { display: inline-block; }#}
+            {##status a, #next a { display: block; }#}
 
-            @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-            @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-            .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-        }
-    </style>
+            {#@-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }#}
+            {#@keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }#}
+            {#.sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}#}
+        {#}#}
+    {#</style>#}
     <link href="{{ asset('css/thumbnail-gallery.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- jQuery -->
@@ -55,5 +34,53 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+    <script src="{{ asset('js/jquery-1.10.1.min.js') }}"></script>
+    <script src="{{ asset('js/modernizr.custom.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/grid.js') }}"></script>
 {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <header class="clearfix">
+            <div class="header">
+                <div class="wrap">
+                    <div class="logo">
+                        <a href="index.html"><h1>Photo Gallery</h1></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <ul id="og-grid" class="og-grid">
+                {% for article in pagination %}
+                    <li {% if loop.index is odd %}class="color"{% endif %}>
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="/uploads/media/default/0001/01/thumb_{{ article.id }}_admin.jpeg" alt="Symfony!" />
+                        </a>
+                        {{ article.description }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- /container -->
+
+    <div class="count">
+        total items is {{ pagination.getTotalItemCount }}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+
+{% endblock %}
+
+
 
