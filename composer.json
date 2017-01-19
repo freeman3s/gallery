@@ -23,7 +23,8 @@
         "sonata-project/user-bundle": "^3.2",
         "sonata-project/classification-bundle": "^3.2",
         "sonata-project/intl-bundle": "^2.3",
-        "sonata-project/media-bundle": "^3.3"
+        "sonata-project/media-bundle": "^3.3",
+        "knplabs/knp-paginator-bundle": "^2.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

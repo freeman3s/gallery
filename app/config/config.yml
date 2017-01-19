@@ -167,10 +167,3 @@ sonata_media:
     providers:
         image:
             resizer: sonata.media.resizer.square
-
-#doctrine_phpcr:
-#    odm:
-#        auto_mapping: true
-#        mappings:
-#            SonataMediaBundle:
-#                prefix: Sonata\MediaBundle\PHPCR

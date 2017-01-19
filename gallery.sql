@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Янв 17 2017 г., 18:00
+-- Время создания: Янв 19 2017 г., 15:45
 -- Версия сервера: 10.1.19-MariaDB
 -- Версия PHP: 5.6.24
 
@@ -235,7 +235,7 @@ CREATE TABLE `fos_user_user` (
 --
 
 INSERT INTO `fos_user_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`, `created_at`, `updated_at`, `date_of_birth`, `firstname`, `lastname`, `website`, `biography`, `gender`, `locale`, `timezone`, `phone`, `facebook_uid`, `facebook_name`, `facebook_data`, `twitter_uid`, `twitter_name`, `twitter_data`, `gplus_uid`, `gplus_name`, `gplus_data`, `token`, `two_step_code`) VALUES
-(2, 'admin', 'admin', 'yuyebimuj@binka.me', 'yuyebimuj@binka.me', 1, 'q60e8di3ra8kgw08gcgk8gc04ogo04c', 'xOdPo2uTVyRldx6yatNe3nemXCqBoDk0Ujmh8H5hA7gN9zh0+MRwRzu/VOjtReZ9N8PZdp0FOW+wS4wU1nMEZA==', '2017-01-17 17:47:07', 0, 0, NULL, 'bVeJZ0HuXqe4EEwP0LGC0-hN6s96X2rGEkvyChi7CN8', '2017-01-17 12:02:18', 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL, '2017-01-17 11:58:52', '2017-01-17 17:47:07', NULL, NULL, NULL, NULL, NULL, 'm', NULL, NULL, NULL, NULL, NULL, 'null', NULL, NULL, 'null', NULL, NULL, 'null', NULL, NULL),
+(2, 'admin', 'admin', 'yuyebimuj@binka.me', 'yuyebimuj@binka.me', 1, 'q60e8di3ra8kgw08gcgk8gc04ogo04c', 'xOdPo2uTVyRldx6yatNe3nemXCqBoDk0Ujmh8H5hA7gN9zh0+MRwRzu/VOjtReZ9N8PZdp0FOW+wS4wU1nMEZA==', '2017-01-19 15:13:52', 0, 0, NULL, 'bVeJZ0HuXqe4EEwP0LGC0-hN6s96X2rGEkvyChi7CN8', '2017-01-17 12:02:18', 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL, '2017-01-17 11:58:52', '2017-01-19 15:13:52', NULL, NULL, NULL, NULL, NULL, 'm', NULL, NULL, NULL, NULL, NULL, 'null', NULL, NULL, 'null', NULL, NULL, 'null', NULL, NULL),
 (3, 'user', 'user', 'bigaj@binka.me', 'bigaj@binka.me', 1, 'qx07fs7424gw4kc40c4808ogc4og0so', 'u61/qcLKcykbF7ChVsyGVZLVStxvLsd10bW/VvaYaF7ByYjArAmomKYJ6rMZenaFmnqgQFFqYN3ZGcO3D2qeAg==', '2017-01-17 17:46:58', 0, 0, NULL, NULL, NULL, 'a:0:{}', 0, NULL, '2017-01-17 13:32:28', '2017-01-17 17:46:58', NULL, NULL, NULL, NULL, NULL, 'u', NULL, NULL, NULL, NULL, NULL, 'null', NULL, NULL, 'null', NULL, NULL, 'null', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -360,7 +360,9 @@ INSERT INTO `media__media` (`id`, `category_id`, `name`, `description`, `enabled
 (29, 1, '7041916-dark-abstract-wallpaper-for-desktop.jpg', NULL, 0, 'sonata.media.provider.image', 1, 'f4b2bee0871cd07d96f7a83a1c71c9af28f84bfd.jpeg', '{"filename":"7041916-dark-abstract-wallpaper-for-desktop.jpg"}', 1280, 1024, NULL, 'image/jpeg', 112466, NULL, NULL, 'default', NULL, NULL, NULL, NULL, '2017-01-17 17:39:04', '2017-01-17 17:39:04'),
 (30, 1, '7041904-short-eared-owl.jpg', NULL, 0, 'sonata.media.provider.image', 1, '924e63addcc1672a681daeec3b409da0329e1a51.jpeg', '{"filename":"7041904-short-eared-owl.jpg"}', 1680, 1050, NULL, 'image/jpeg', 256051, NULL, NULL, 'default', NULL, NULL, NULL, NULL, '2017-01-17 17:39:13', '2017-01-17 17:39:13'),
 (31, 1, '7041860-spring-river-wallpaper.jpg', NULL, 0, 'sonata.media.provider.image', 1, '0c56c54d31555dc0d8353b598f7d235bcd93fb16.jpeg', '{"filename":"7041860-spring-river-wallpaper.jpg"}', 1920, 1080, NULL, 'image/jpeg', 991040, NULL, NULL, 'default', NULL, NULL, NULL, NULL, '2017-01-17 17:39:24', '2017-01-17 17:39:24'),
-(32, 1, '7041902-snow-mountain.jpg', NULL, 0, 'sonata.media.provider.image', 1, 'f83645b95c20e2cd13a66b6b669fb81818d73b20.jpeg', '{"filename":"7041902-snow-mountain.jpg"}', 1920, 1200, NULL, 'image/jpeg', 231362, NULL, NULL, 'default', NULL, NULL, NULL, NULL, '2017-01-17 17:39:35', '2017-01-17 17:39:35');
+(32, 1, '7041902-snow-mountain.jpg', NULL, 0, 'sonata.media.provider.image', 1, 'f83645b95c20e2cd13a66b6b669fb81818d73b20.jpeg', '{"filename":"7041902-snow-mountain.jpg"}', 1920, 1200, NULL, 'image/jpeg', 231362, NULL, NULL, 'default', NULL, NULL, NULL, NULL, '2017-01-17 17:39:35', '2017-01-17 17:39:35'),
+(33, 1, '7041851-franck-ribery.jpg', NULL, 0, 'sonata.media.provider.image', 1, 'e829f2fddf7687598608aa58e0cb86d4050c0ebd.jpeg', '{"filename":"7041851-franck-ribery.jpg"}', 1920, 1080, NULL, 'image/jpeg', 462178, NULL, NULL, 'default', NULL, NULL, NULL, NULL, '2017-01-19 13:07:23', '2017-01-19 13:07:23'),
+(34, 1, '7041904-short-eared-owl.jpg', NULL, 0, 'sonata.media.provider.image', 1, 'f212b9500d3413e6f8c62519c207b15e21998404.jpeg', '{"filename":"7041904-short-eared-owl.jpg"}', 1680, 1050, NULL, 'image/jpeg', 256051, NULL, NULL, 'default', NULL, NULL, NULL, NULL, '2017-01-19 15:14:36', '2017-01-19 15:14:36');
 
 --
 -- Индексы сохранённых таблиц
@@ -546,7 +548,7 @@ ALTER TABLE `media__gallery_media`
 -- AUTO_INCREMENT для таблицы `media__media`
 --
 ALTER TABLE `media__media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

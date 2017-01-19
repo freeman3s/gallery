@@ -1,31 +1,24 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
-    <!-- Page Content -->
-    <div class="container">
 
-        <div class="col-lg-12">
-            <h1 class="page-header">Gallery</h1>
-        </div>
-
-        <div class="row">
-
-            {% for image in data %}
-                <div class="thumb">
-                    <a class="thumbnail" href="#">
-                        <img class="img-responsive" src="{{image.id}}" alt="Symfony!" />
-                    </a>
-                    <div>
-                        {{ image.description }}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-
+    <div class="count">
+        total items is {{ pagination.getTotalItemCount }}
     </div>
-    <!-- /.container -->
+    <table>
+        {% for article in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive" src="/uploads/media/default/0001/01/thumb_{{ article.id }}_admin.jpeg" alt="Symfony!" />
+                </a>
+                {{ article.description }}
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
 {% endblock %}
 
 {% block stylesheets %}

@@ -22,24 +22,21 @@ class DefaultController extends Controller
      */
     public function listAction(Request $request = null)
     {
-        $repository = $this->getDoctrine()
+        $em = $this->getDoctrine()
             ->getRepository('ApplicationSonataMediaBundle:Media');
-        $query = $repository->createQueryBuilder('p')
-            ->select('p.providerReference')
+        $images = $em->createQueryBuilder('p')
             ->select('p.description, p.id')
             ->orderBy('p.createdAt', 'DESC')
             ->getQuery();
-        $data = $query->getResult();
 
-        foreach ($data as $key => $value) {
-            $correct_data[$key] = array(
-                'id' => 'uploads/media/default/0001/01/thumb_' . $value['id'] . '_admin.jpeg',
-                'description' => $value['description'],
-            );
-        }
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $images,
+            $this->get('request')->query->get('page', 1),
+            12 /*limit per page*/
+        );
 
-        return $this->render('AppBundle::gallery.html.twig', array(
-            'data' => $correct_data
-        ));
+        // parameters to template
+        return $this->render('AppBundle::gallery.html.twig', array('pagination' => $pagination));
     }
 }
